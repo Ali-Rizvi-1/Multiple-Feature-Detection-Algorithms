@@ -58,20 +58,20 @@ while(True):
         # find and draw the keypoints
         kp_brisk = brisk.detect(gray,None)
 
-        # # Initiate STAR detector 
-        # star = cv2.xfeatures2d.StarDetector_create()
-        # # Initiate BRIEF extractor
-        # brief = cv2.xfeatures2d.BriefDescriptorExtractor_create()
-        # # find the keypoints with STAR
-        # kp = star.detect(gray,None)
-        # # compute the descriptors with BRIEF
-        # kp_brief, des = brief.compute(gray, kp)
+        # Initiate STAR detector 
+        star = cv2.xfeatures2d.StarDetector_create()
+        # Initiate BRIEF extractor
+        brief = cv2.xfeatures2d.BriefDescriptorExtractor_create()
+        # find the keypoints with STAR
+        kp = star.detect(gray,None)
+        # compute the descriptors with BRIEF
+        kp_brief, des = brief.compute(gray, kp)
 
         total_kp_sift += len(kp_sift)
         total_kp_orb += len(kp_orb)
         total_kp_hcd += len(kp_hcd)
         total_kp_fast += len(kp_fast)
-        #total_kp_brief += len(kp_brief)
+        total_kp_brief += len(kp_brief)
         total_kp_brief += len(kp_brisk)
 
         print('Dimensions of Frame ', str(frameNr),frame.shape)
