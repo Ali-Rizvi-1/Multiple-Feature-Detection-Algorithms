@@ -37,7 +37,7 @@ while(True):
         # Initiate SIFT detector
         sift = cv2.SIFT_create()
         # find the keypoints with SIFT
-        kp_sift = sift.detect(gray,None)
+        kp_sift, sift_descriptors = sift.detectandCompute(gray,None)
 
         # Initiate ORB detector
         orb = cv2.ORB_create()
